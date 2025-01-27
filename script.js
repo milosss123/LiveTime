@@ -29,7 +29,7 @@ function prikaziVreme(zona) {
   document.getElementById("datum").textContent = `${dan}.${mesec}.${godina}`;
 }
 
-// Funkcija za prebacivanje teme (svetla/tamna)
+// Funkcija za prebacivanje teme
 function prebacivanjeTeme() {
   // Ako je trenutno svetla tema, prebacujemo na tamnu i obratno
   if (document.body.classList.contains("svetla-tema")) {
@@ -41,7 +41,7 @@ function prebacivanjeTeme() {
   }
 }
 
-// Dodaj događaje za dugme koje prebacuje teme
+// Dodavanje događaja za dugme koje prebacuje teme
 document.getElementById("prebaci-temu").addEventListener("click", prebacivanjeTeme);
 
 // Funkcija za promenu vremenske zone
@@ -58,3 +58,19 @@ prikaziVreme(trenutnaZona);
 
 // Pozivaj funkciju za vreme svakih 1000 ms (1 sekunda) da osvežavaš sat
 setInterval(() => prikaziVreme(trenutnaZona), 1000);
+
+// Promena tema dugmadi
+document.getElementById("zelena-tema").addEventListener("click", () => {
+  document.body.classList.remove("svetla-tema", "tamna-tema", "plava-tema", "crvena-tema");
+  document.body.classList.add("zelena-tema");
+});
+
+document.getElementById("plava-tema").addEventListener("click", () => {
+  document.body.classList.remove("svetla-tema", "tamna-tema", "zelena-tema", "crvena-tema");
+  document.body.classList.add("plava-tema");
+});
+
+document.getElementById("crvena-tema").addEventListener("click", () => {
+  document.body.classList.remove("svetla-tema", "tamna-tema", "zelena-tema", "plava-tema");
+  document.body.classList.add("crvena-tema");
+});
