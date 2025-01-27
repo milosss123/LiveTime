@@ -25,6 +25,27 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Brojevi sata */
+.broj {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#broj1 { top: 15px; left: 20px; }
+#broj2 { top: 20px; right: 20px; }
+#broj3 { top: 70px; right: 20px; }
+#broj4 { bottom: 20px; right: 20px; }
+#broj5 { bottom: 15px; left: 20px; }
+#broj6 { bottom: 70px; left: 20px; }
+#broj7 { bottom: 110px; left: 45px; }
+#broj8 { bottom: 110px; right: 45px; }
+#broj9 { top: 70px; left: 20px; }
+#broj10 { top: 20px; left: 80px; }
+#broj11 { top: 20px; right: 80px; }
+#broj12 { top: 10px; left: 125px; }
+
 .kazaljka {
   position: absolute;
   bottom: 50%;
