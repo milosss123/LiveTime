@@ -12,15 +12,25 @@ function prikaziVreme(zona) {
   });
 
   const vreme = formatter.format(sada);
-  
-  // Ažuriramo prikaz na stranici
-  document.getElementById("sat").textContent = vreme;
 
-  // Prikazivanje datuma
+  // Prikazivanje kazaljki
+  const sat = sada.getHours() % 12 + sada.getMinutes() / 60;  // pretvaranje u sat (12-časovni format)
+  const minut = sada.getMinutes();
+  const sekund = sada.getSeconds();
+
+  const satDeg = (sat / 12) * 360;  // Pomeranje kazaljke sata
+  const minutDeg = (minut / 60) * 360;  // Pomeranje kazaljke minuta
+  const sekundDeg = (sekund / 60) * 360;  // Pomeranje kazaljke sekundi
+
+  // Ažuriraj pozicije kazaljki
+  document.getElementById("sat-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${satDeg}deg)`;
+  document.getElementById("minut-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${minutDeg}deg)`;
+  document.getElementById("sekund-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${sekundDeg}deg)`;
+
+  // Ažuriranje datuma
   let dan = String(sada.getDate()).padStart(2, "0");
   let mesec = String(sada.getMonth() + 1).padStart(2, "0");
   let godina = sada.getFullYear();
-
   document.getElementById("datum").textContent = `${dan}.${mesec}.${godina}`;
 }
 

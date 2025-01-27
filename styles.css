@@ -12,18 +12,45 @@ h1 {
 }
 
 #sat {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333;
-  margin: 20px;
-  width: 200px;
-  height: 200px;
+  position: relative;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 10px solid #333;
+  margin: 0 auto;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.kazaljka {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) translateY(-100%);
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.sat {
+  width: 6px;
+  height: 60px;
+  background-color: black;
+}
+
+.minut {
+  width: 4px;
+  height: 80px;
+  background-color: #666;
+}
+
+.sekund {
+  width: 2px;
+  height: 90px;
+  background-color: red;
 }
 
 #datum {
@@ -61,7 +88,7 @@ select {
 }
 
 .mracna-tema #sat {
-  color: #ff9800; /* Zlata boja za sat u mračnoj temi */
+  border-color: #ff9800; /* Zlata boja za okrugli sat u mračnoj temi */
 }
 
 .mracna-tema button {
