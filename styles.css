@@ -25,7 +25,7 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Brojevi sata */
+/* Pozicioniranje brojeva */
 .broj {
   position: absolute;
   font-size: 1.5rem;
@@ -33,18 +33,18 @@ h1 {
   color: #333;
 }
 
-#broj1 { top: 15px; left: 20px; }
-#broj2 { top: 20px; right: 20px; }
-#broj3 { top: 70px; right: 20px; }
-#broj4 { bottom: 20px; right: 20px; }
-#broj5 { bottom: 15px; left: 20px; }
-#broj6 { bottom: 70px; left: 20px; }
-#broj7 { bottom: 110px; left: 45px; }
-#broj8 { bottom: 110px; right: 45px; }
-#broj9 { top: 70px; left: 20px; }
-#broj10 { top: 20px; left: 80px; }
-#broj11 { top: 20px; right: 80px; }
-#broj12 { top: 10px; left: 125px; }
+#broj1 { top: 10px; left: 50%; transform: translateX(-50%); }
+#broj2 { top: 18px; left: 85%; transform: translateX(-50%); }
+#broj3 { top: 50%; left: 92%; transform: translateY(-50%); }
+#broj4 { bottom: 18px; left: 85%; transform: translateX(-50%); }
+#broj5 { bottom: 10px; left: 50%; transform: translateX(-50%); }
+#broj6 { bottom: 50%; left: 8%; transform: translateY(50%); }
+#broj7 { bottom: 18px; left: 15%; transform: translateX(-50%); }
+#broj8 { top: 50%; left: 8%; transform: translateY(-50%); }
+#broj9 { top: 50%; left: 8%; transform: translateY(-50%); }
+#broj10 { top: 18px; left: 15%; transform: translateX(-50%); }
+#broj11 { top: 18px; left: 25%; transform: translateX(-50%); }
+#broj12 { top: 10px; left: 25%; transform: translateX(-50%); }
 
 .kazaljka {
   position: absolute;
