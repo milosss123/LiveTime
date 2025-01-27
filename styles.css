@@ -1,0 +1,67 @@
+/* Osnovni stilovi */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#sat {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin: 20px;
+}
+
+#datum {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Mračna tema */
+.mracna-tema {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.mracna-tema #sat {
+  color: #ff9800; /* Zlata boja za sat u mračnoj temi */
+}
+
+.mracna-tema button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.mracna-tema select {
+  background-color: #333333;
+  color: #ffffff;
+}
