@@ -12,21 +12,16 @@ function prikaziVreme(zona) {
   });
 
   const vreme = formatter.format(sada);
-
-  // Prikazivanje kazaljki
-  const sat = sada.getHours() % 12 + sada.getMinutes() / 60;  // pretvaranje u sat (12-časovni format)
-  const minut = sada.getMinutes();
-  const sekund = sada.getSeconds();
-
-  const satDeg = (sat / 12) * 360;  // Pomeranje kazaljke sata
-  const minutDeg = (minut / 60) * 360;  // Pomeranje kazaljke minuta
-  const sekundDeg = (sekund / 60) * 360;  // Pomeranje kazaljke sekundi
-
-  // Ažuriraj pozicije kazaljki
-  document.getElementById("sat-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${satDeg}deg)`;
-  document.getElementById("minut-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${minutDeg}deg)`;
-  document.getElementById("sekund-iskaz").style.transform = `translateX(-50%) translateY(-100%) rotate(${sekundDeg}deg)`;
-
+  
+  const [sati, minuti, sekundi] = vreme.split(':');
+  const amPm = (parseInt(sati) >= 12) ? 'PM' : 'AM';
+  
+  // Ažuriranje vremena na ekranu
+  document.getElementById("sat").textContent = sati.padStart(2, "0");
+  document.getElementById("minut").textContent = minuti.padStart(2, "0");
+  document.getElementById("sekund").textContent = sekundi.padStart(2, "0");
+  document.getElementById("am-pm").textContent = amPm;
+  
   // Ažuriranje datuma
   let dan = String(sada.getDate()).padStart(2, "0");
   let mesec = String(sada.getMonth() + 1).padStart(2, "0");
@@ -34,13 +29,26 @@ function prikaziVreme(zona) {
   document.getElementById("datum").textContent = `${dan}.${mesec}.${godina}`;
 }
 
-// Funkcija za prebacivanje teme (svetla/mračna)
+// Funkcija za prebacivanje teme (svetla/tamna/zelena/plava)
 function prebacivanjeTeme() {
-  document.body.classList.toggle("mracna-tema");
+  document.body.classList.toggle("svetla-tema");
+  document.body.classList.remove("tamna-tema", "zelena-tema", "plava-tema");
 }
 
-// Dodaj događaj za dugme koje prebacuje temu
+function prebacivanjeZeleneTeme() {
+  document.body.classList.toggle("zelena-tema");
+  document.body.classList.remove("svetla-tema", "tamna-tema", "plava-tema");
+}
+
+function prebacivanjePlaveTeme() {
+  document.body.classList.toggle("plava-tema");
+  document.body.classList.remove("svetla-tema", "tamna-tema", "zelena-tema");
+}
+
+// Dodaj događaje za dugmadi koja prebacuju teme
 document.getElementById("prebaci-temu").addEventListener("click", prebacivanjeTeme);
+document.getElementById("prebaci-temu-zeleno").addEventListener("click", prebacivanjeZeleneTeme);
+document.getElementById("prebaci-temu-plavo").addEventListener("click", prebacivanjePlaveTeme);
 
 // Funkcija za promenu vremenske zone
 document.getElementById("vremenska-zona").addEventListener("change", function() {

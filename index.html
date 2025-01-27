@@ -3,40 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analogni Sat</title>
+  <title>Digitalni Sat</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Analogni Sat Uživo</h1>
+  <h1>Digitalni Sat Uživo</h1>
 
-  <!-- Sat -->
-  <div id="sat" class="round-clock">
-    <!-- Brojevi od 1 do 12 -->
-    <div class="broj" id="broj1">1</div>
-    <div class="broj" id="broj2">2</div>
-    <div class="broj" id="broj3">3</div>
-    <div class="broj" id="broj4">4</div>
-    <div class="broj" id="broj5">5</div>
-    <div class="broj" id="broj6">6</div>
-    <div class="broj" id="broj7">7</div>
-    <div class="broj" id="broj8">8</div>
-    <div class="broj" id="broj9">9</div>
-    <div class="broj" id="broj10">10</div>
-    <div class="broj" id="broj11">11</div>
-    <div class="broj" id="broj12">12</div>
-
-    <div id="sat-iskaz" class="kazaljka sat"></div>
-    <div id="minut-iskaz" class="kazaljka minut"></div>
-    <div id="sekund-iskaz" class="kazaljka sekund"></div>
-  </div>
-
-  <!-- Datum -->
-  <div id="datum"></div>
-
-  <!-- Dugme za prebacivanje teme -->
-  <button id="prebaci-temu">Prebaci temu</button>
-
-  <!-- Dropdown za biranje vremenske zone -->
+  <!-- Vremenski gradovi -->
   <select id="vremenska-zona">
     <option value="Europe/Belgrade">Beograd</option>
     <option value="America/New_York">New York</option>
@@ -46,6 +19,22 @@
     <option value="America/Sao_Paulo">Sao Paulo</option>
     <option value="America/Los_Angeles">Los Angeles</option>
   </select>
+
+  <!-- Digitalno vreme -->
+  <div id="vreme">
+    <span id="sat">00</span>:<span id="minut">00</span>:<span id="sekund">00</span>
+    <span id="am-pm">AM</span>
+  </div>
+
+  <!-- Datum -->
+  <div id="datum"></div>
+
+  <!-- Dugme za prebacivanje teme -->
+  <button id="prebaci-temu">Prebaci temu</button>
+
+  <!-- Dugme za prebacivanje na teme -->
+  <button id="prebaci-temu-zeleno">Zelena Tema</button>
+  <button id="prebaci-temu-plavo">Plava Tema</button>
 
   <script src="script.js"></script>
 </body>

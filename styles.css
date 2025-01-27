@@ -1,9 +1,9 @@
 /* Osnovni stilovi */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   text-align: center;
   padding: 20px;
+  margin: 0;
 }
 
 h1 {
@@ -11,72 +11,15 @@ h1 {
   margin-bottom: 20px;
 }
 
-#sat {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 10px solid #333;
-  margin: 0 auto;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Pozicioniranje brojeva */
-.broj {
-  position: absolute;
-  font-size: 1.5rem;
+#vreme {
+  font-size: 3rem;
   font-weight: bold;
-  color: #333;
-}
-
-#broj1 { top: 10px; left: 50%; transform: translateX(-50%); }
-#broj2 { top: 18px; left: 85%; transform: translateX(-50%); }
-#broj3 { top: 50%; left: 92%; transform: translateY(-50%); }
-#broj4 { bottom: 18px; left: 85%; transform: translateX(-50%); }
-#broj5 { bottom: 10px; left: 50%; transform: translateX(-50%); }
-#broj6 { bottom: 50%; left: 8%; transform: translateY(50%); }
-#broj7 { bottom: 18px; left: 15%; transform: translateX(-50%); }
-#broj8 { top: 50%; left: 8%; transform: translateY(-50%); }
-#broj9 { top: 50%; left: 8%; transform: translateY(-50%); }
-#broj10 { top: 18px; left: 15%; transform: translateX(-50%); }
-#broj11 { top: 18px; left: 25%; transform: translateX(-50%); }
-#broj12 { top: 10px; left: 25%; transform: translateX(-50%); }
-
-.kazaljka {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: 50% 100%;
-  transform: translateX(-50%) translateY(-100%);
-  background-color: #333;
-  border-radius: 50%;
-}
-
-.sat {
-  width: 6px;
-  height: 60px;
-  background-color: black;
-}
-
-.minut {
-  width: 4px;
-  height: 80px;
-  background-color: #666;
-}
-
-.sekund {
-  width: 2px;
-  height: 90px;
-  background-color: red;
+  margin-bottom: 20px;
 }
 
 #datum {
   font-size: 1.5rem;
-  color: #666;
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -102,22 +45,23 @@ select {
   cursor: pointer;
 }
 
-/* Mračna tema */
-.mracna-tema {
+/* Teme */
+.svetla-tema {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.tamna-tema {
   background-color: #121212;
   color: #ffffff;
 }
 
-.mracna-tema #sat {
-  border-color: #ff9800; /* Zlata boja za okrugli sat u mračnoj temi */
-}
-
-.mracna-tema button {
-  background-color: #333333;
+.zelena-tema {
+  background-color: #4CAF50;
   color: #ffffff;
 }
 
-.mracna-tema select {
-  background-color: #333333;
+.plava-tema {
+  background-color: #2196F3;
   color: #ffffff;
 }
