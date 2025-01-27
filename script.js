@@ -20,7 +20,7 @@ function prikaziVreme(zona) {
   document.getElementById("sat").textContent = sati.padStart(2, "0");
   document.getElementById("minut").textContent = minuti.padStart(2, "0");
   document.getElementById("sekund").textContent = sekundi.padStart(2, "0");
-  document.getElementById("am-pm").textContent = amPm;
+  document.getElementById("am-pm").textContent = amPm;  // Prikazivanje samo AM ili PM
   
   // Ažuriranje datuma
   let dan = String(sada.getDate()).padStart(2, "0");
@@ -29,26 +29,20 @@ function prikaziVreme(zona) {
   document.getElementById("datum").textContent = `${dan}.${mesec}.${godina}`;
 }
 
-// Funkcija za prebacivanje teme (svetla/tamna/zelena/plava)
+// Funkcija za prebacivanje teme (svetla/tamna)
 function prebacivanjeTeme() {
-  document.body.classList.toggle("svetla-tema");
-  document.body.classList.remove("tamna-tema", "zelena-tema", "plava-tema");
+  // Ako je trenutno svetla tema, prebacujemo na tamnu i obratno
+  if (document.body.classList.contains("svetla-tema")) {
+    document.body.classList.remove("svetla-tema");
+    document.body.classList.add("tamna-tema");
+  } else {
+    document.body.classList.remove("tamna-tema");
+    document.body.classList.add("svetla-tema");
+  }
 }
 
-function prebacivanjeZeleneTeme() {
-  document.body.classList.toggle("zelena-tema");
-  document.body.classList.remove("svetla-tema", "tamna-tema", "plava-tema");
-}
-
-function prebacivanjePlaveTeme() {
-  document.body.classList.toggle("plava-tema");
-  document.body.classList.remove("svetla-tema", "tamna-tema", "zelena-tema");
-}
-
-// Dodaj događaje za dugmadi koja prebacuju teme
+// Dodaj događaje za dugme koje prebacuje teme
 document.getElementById("prebaci-temu").addEventListener("click", prebacivanjeTeme);
-document.getElementById("prebaci-temu-zeleno").addEventListener("click", prebacivanjeZeleneTeme);
-document.getElementById("prebaci-temu-plavo").addEventListener("click", prebacivanjePlaveTeme);
 
 // Funkcija za promenu vremenske zone
 document.getElementById("vremenska-zona").addEventListener("change", function() {
