@@ -16,6 +16,14 @@ h1 {
   font-weight: bold;
   color: #333;
   margin: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #datum {
